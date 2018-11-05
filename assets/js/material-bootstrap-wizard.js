@@ -41,6 +41,8 @@ $(document).ready(function(){
 
     $.material.init();
 
+    //vars
+
     /*  Activate the tooltips      */
     $('[rel="tooltip"]').tooltip();
 
@@ -74,6 +76,32 @@ $(document).ready(function(){
          }
 	});
 
+     // Code for the Validator
+    var $validator_sobre = $('.wizard-card #sobre-seu-consumo').validate({
+          rules: {
+            answer_1: {
+              required: true,
+              minlength: 1
+            },
+            answer_2: {
+              required: true,
+              minlength: 1
+            },
+            answer_3: {
+              required: true,
+              minlength: 1
+            },
+            answer_4: {
+              required: true,
+              minlength: 1
+            }
+        },
+
+        errorPlacement: function(error, element) {
+            $(element).parent('div').addClass('has-error');
+         }
+    });
+
     // Wizard Initialization
   	$('.wizard-card').bootstrapWizard({
         'tabClass': 'nav nav-pills',
@@ -81,14 +109,18 @@ $(document).ready(function(){
         'previousSelector': '.btn-previous',
 
         onNext: function(tab, navigation, index) {
-        	var $valid = $('.wizard-card form').valid();
+            var $valid = $('.wizard-card #sobre-voce').valid();
+        	var $valid_2 = $('.wizard-card #sobre-seu-consumo').valid();
         	if(!$valid) {
         		$validator.focusInvalid();
         		return false;
-        	}
+        	}else if(!$valid_2){
+                $validator_sobre.focusInvalid();
+                return false;
+            }
         },
 
-        onInit : function(tab, navigation, index){
+        onInit: function(tab, navigation, index){
 
           //check number of tabs and fill the entire row
           var $total = navigation.find('li').length;
@@ -109,21 +141,64 @@ $(document).ready(function(){
            $('.moving-tab').css('transition','transform 0s');
        },
 
-        onTabClick : function(tab, navigation, index){
-            var $valid = $('.wizard-card form').valid();
+        onTabClick: function(tab, navigation, index){
+            var $valid = $('.wizard-card #sobre-voce').valid();
+            var $valid_2 = $('.wizard-card #sobre-seu-consumo').valid();
 
             if(!$valid){
                 return false;
-            } else{
+            }else if (!$valid_2) {
+                return false;
+            }else{
                 return true;
             }
+
         },
 
         onTabShow: function(tab, navigation, index) {
             var $total = navigation.find('li').length;
             var $current = index+1;
-
             var $wizard = navigation.closest('.wizard-card');
+
+            if ($current == 3) {
+                //Algoritmo
+                var planos = [
+                            {nome:'Oi Controle!', op:'oi', dados:230, minutos:60, preco:'R$99,00'},
+                            {nome:'TIM Plano  Pós-Pago', op:'tim', dados:190, minutos:50, preco:'R$79,00'},
+                            {nome:'Vivo Pós!', op:'vivo', dados:150, minutos:10, preco:'R$49,00'},
+                            {nome:'TIM Infinity pré!', op:'tim', dados:140, minutos:20, preco:'R$49,00'},
+                            {nome:'Vivo Controle!', op:'vivo', dados:100, minutos:10, preco:'R$39,00'}
+                            ];
+                var answers = [];
+                var valor_total_int=0;
+                var valor_total_tel=0;
+                var aux=0;
+                for (var i = 0; i <= 4; i++) {
+                    var valor = $('[name="answer_'+(i+1)+'"]:checked')[0].value;
+                    var tipo = $('[name="answer_'+(i+1)+'"]:checked')[0].accessKey;
+                    if (tipo == 'dados') {
+                        valor_total_int+=parseInt(valor);
+                    }else{
+                        valor_total_tel+=parseInt(valor);
+                    }
+                    answers.push({valor:valor, tipo:tipo}); 
+                }
+
+                for (var i = 4; i >= 0; i--) {
+                        if ((valor_total_int*10) <= planos[i].dados) {
+                            break;
+                        }
+                }
+
+                console.log("Internet: "+(valor_total_int*10)+" e telefone:"+valor_total_tel);
+                console.log("Seu plano é: ");
+                console.log(planos[i]);
+                $('.img_res')[0].src = "assets/img/logo_"+planos[i].op+".png";
+                $('.plano_res').text(planos[i].nome);
+                $('.dado_res').text('Pacote: '+planos[i].dados+'MB');
+                $('.min_res').text('Minutos: '+planos[i].minutos+' min');
+                $('.preco_res').text('Preço: '+planos[i].preco);
+            }
 
             // If it's the last tab then hide the last button and show the finish instead
             if($current >= $total) {

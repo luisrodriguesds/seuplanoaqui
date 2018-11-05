@@ -62,7 +62,7 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	<div class="image-container set-full-height" style="background-image: url('assets/img/bg.jpg')">
+	<div class="image-container set-full-height" style="background-image: url('assets/img/bg.jpg'); background-attachment: fixed;">
 	    <!--   Creative Tim Branding   -->
 	    <!-- <a href="https://creative-tim.com">
 	         <div class="logo-container">
@@ -89,7 +89,6 @@
 		            <div class="wizard-container">
 		                <div class="card wizard-card" data-color="green" id="wizardProfile">
 		                <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
-
 		                    	<div class="wizard-header">
 		                    		<div class="logo">
 		                    			<img src="assets/img/logo.png">
@@ -227,22 +226,22 @@
 																	</tr>
 																	<tr>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_1" value="0">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_1" value="1">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_1" value="2">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_1" value="3">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_1" value="4">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_1" value="5">
 																		</td>
 																	</tr>
 																</thead>
@@ -264,22 +263,22 @@
 																	</tr>
 																	<tr>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_2" value="0">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_2" value="1">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_2" value="2">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_2" value="3">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_2" value="4">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_2" value="5">
 																		</td>
 																	</tr>
 																</thead>
@@ -301,28 +300,29 @@
 																	</tr>
 																	<tr>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_3" value="0">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_3" value="1">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_3" value="2">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_3" value="3">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_3" value="4">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_3" value="5">
 																		</td>
 																	</tr>
 																</thead>
 															</tr>
 														</table>
 													</div>
+
 													<div class="input-group">
 														<label class="answer">Quanto você consome de Twitter em média em um dia?</label>
 														<table class="table">
@@ -338,28 +338,66 @@
 																	</tr>
 																	<tr>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_4" value="0">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_4" value="1">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_4" value="2">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_4" value="3">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_4" value="4">
 																		</td>
 																		<td>
-																			<input type="radio" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_4" value="5">
 																		</td>
 																	</tr>
 																</thead>
 															</tr>
 														</table>
 													</div>
+													<div class="input-group">
+														<label class="answer">Quanto você consome de minutos de ligação em um dia?</label>
+														<table class="table">
+															<tr>
+																<thead>
+																	<tr>
+																		<th>0</th>
+																		<th>1</th>
+																		<th>2</th>
+																		<th>3</th>
+																		<th>4</th>
+																		<th>5</th>
+																	</tr>
+																	<tr>
+																		<td>
+																			<input type="radio" accessKey="tel" name="answer_5" value="0">
+																		</td>
+																		<td>
+																			<input type="radio" accessKey="tel" name="answer_5" value="1">
+																		</td>
+																		<td>
+																			<input type="radio" accessKey="tel" name="answer_5" value="2">
+																		</td>
+																		<td>
+																			<input type="radio" accessKey="tel" name="answer_5" value="3">
+																		</td>
+																		<td>
+																			<input type="radio" accessKey="tel" name="answer_5" value="4">
+																		</td>
+																		<td>
+																			<input type="radio" accessKey="tel" name="answer_5" value="5">
+																		</td>
+																	</tr>
+																</thead>
+															</tr>
+														</table>
+													</div>
+
 			                                	</div>
 			                                </div>
 		                            	</form>
@@ -370,10 +408,19 @@
 		                                        <h4 class="info-text"> O melhor plano para você é da:  </h4>
 		                                    </div>
 		                                    <div class="col-sm-12 text-center">
-		                                    	<img src="assets/img/logo_tim.png" style="width: 450px; margin-bottom: 30px;">
+		                                    	<img src="" class="img_res" style="width: 30%; margin-bottom: 30px;">
 		                                    </div>
 		                                    <div class="col-sm-5 center-div text-center">
-		                                    	<h3>Plano Infinity pré!</h3>
+		                                    	<strong><h3 class="plano_res">Plano Infinity pré!</h3></strong>
+		                                    </div>
+		                                    <div class="col-sm-5 center-div text-center">
+		                                    	<h3 class="dado_res">Pacote: </h3>
+		                                    </div>
+		                                    <div class="col-sm-5 center-div text-center">
+		                                    	<h3 class="min_res">Minutos: </h3>
+		                                    </div>
+		                                    <div class="col-sm-5 center-div text-center">
+		                                    	<h3 class="preco_res">Preço: </h3>
 		                                    </div>
 		                                    <!-- <div class="col-sm-7 col-sm-offset-1">
 	                                        	<div class="form-group label-floating">
