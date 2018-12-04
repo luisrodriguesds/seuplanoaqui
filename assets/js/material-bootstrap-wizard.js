@@ -94,6 +94,22 @@ $(document).ready(function(){
             answer_4: {
               required: true,
               minlength: 1
+            },
+            answer_5: {
+              required: true,
+              minlength: 1
+            },
+            answer_6: {
+              required: true,
+              minlength: 1
+            },
+            answer_7: {
+              required: true,
+              minlength: 1
+            },
+            answer_7: {
+              required: true,
+              minlength: 1
             }
         },
 
@@ -161,7 +177,7 @@ $(document).ready(function(){
             var $wizard = navigation.closest('.wizard-card');
 
             if ($current == 3) {
-                //Algoritmo
+                //Algoritmo============================================================================
                 var planos = [
                             {nome:'Oi Controle!', op:'oi', dados:230, minutos:60, preco:'R$99,00'},
                             {nome:'TIM Plano  Pós-Pago', op:'tim', dados:190, minutos:50, preco:'R$79,00'},
@@ -169,35 +185,57 @@ $(document).ready(function(){
                             {nome:'TIM Infinity pré!', op:'tim', dados:140, minutos:20, preco:'R$49,00'},
                             {nome:'Vivo Controle!', op:'vivo', dados:100, minutos:10, preco:'R$39,00'}
                             ];
-                var answers = [];
-                var valor_total_int=0;
-                var valor_total_tel=0;
-                var aux=0;
-                for (var i = 0; i <= 4; i++) {
-                    var valor = $('[name="answer_'+(i+1)+'"]:checked')[0].value;
-                    var tipo = $('[name="answer_'+(i+1)+'"]:checked')[0].accessKey;
-                    if (tipo == 'dados') {
-                        valor_total_int+=parseInt(valor);
-                    }else{
-                        valor_total_tel+=parseInt(valor);
-                    }
-                    answers.push({valor:valor, tipo:tipo}); 
-                }
+                
+                var answers     = $('.about-us input[type=number]');
+                var totalKb     = 0;
+                var totalweek   = 0;
+                var totalmonth  = 0;
 
-                for (var i = 4; i >= 0; i--) {
-                        if ((valor_total_int*10) <= planos[i].dados) {
-                            break;
+                //Valorbase*Num -> 1 dia
+                //Valorbase*Num*7 -> 1 semana
+                //Valorbase*Num*30 -> 1 mes
+
+                for (var i = 0; i < answers.length; i++) {
+                    totalKb = totalKb + ($(answers[i]).val()*$(answers[i]).siblings('[name=valorbase]').val());
+                }
+                totalweek = 7*totalKb;
+                totalweek = formatBytes(totalweek);
+                totalmonth= 30*totalKb;
+                totalmonth= formatBytes(totalmonth); 
+                // totalKb   = formatBytes(totalKb);
+                console.log();
+                console.log(totalweek);
+                console.log(totalmonth);
+                $.post(location.href+'assets/ajax/verifica_plano.php', {totalKb:totalKb, totalweek:totalweek, totalmonth:totalmonth}, function(data, textStatus, xhr) {
+
+                    if (data != '') {
+                        data = $.parseJSON(data);
+                        console.log(data);
+                        var res = '';
+                        for (var i = 0; i < data.length; i++) {
+                            
+                            res+= '<div class="card">';
+                            res+= '<div class="col-sm-12 text-center"><img src="assets/img/logo_'+(data[i].operadora.toLowerCase())+'.png" class="img_res" style="width: 30%; margin-bottom: 30px;"></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><strong><h3 class="res_tipo_servico">'+data[i].tipo+' - '+data[i].servico+'</h3></strong></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_validade">'+data[i].validade+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_preco">R$'+data[i].valor+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_pacote">'+data[i].internet+' - '+data[i].minutos+' - SMS: '+data[i].sms+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_app">Apps Inclusos: '+data[i].aplicativos+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_appili">Apps Ilimitados: '+data[i].aplicativosIlimitados+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_permanenciaMinima">Permanência Mínima: '+data[i].permanenciaMinima+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_obs">Observação: '+((data[i].obs == null) ? '-' : data[i].obs)+'</h3></div>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_obs">Dependentes: '+((data[i].dependentes == null) ? '-' : data[i].dependentes)+'</h3></div><hr>';
+                            res+= '</div>';
                         }
-                }
+                        $('.lista_plano').html(res);
+                    }
+                });
 
-                console.log("Internet: "+(valor_total_int*10)+" e telefone:"+valor_total_tel);
-                console.log("Seu plano é: ");
-                console.log(planos[i]);
-                $('.img_res')[0].src = "assets/img/logo_"+planos[i].op+".png";
-                $('.plano_res').text(planos[i].nome);
-                $('.dado_res').text('Pacote: '+planos[i].dados+'MB');
-                $('.min_res').text('Minutos: '+planos[i].minutos+' min');
-                $('.preco_res').text('Preço: '+planos[i].preco);
+                // $('.img_res')[0].src = "assets/img/logo_"+planos[i].op+".png";
+                // $('.plano_res').text(planos[i].nome);
+                // $('.dado_res').text('Pacote: '+planos[i].dados+'MB');
+                // $('.min_res').text('Minutos: '+planos[i].minutos+' min');
+                // $('.preco_res').text('Preço: '+planos[i].preco);
             }
 
             // If it's the last tab then hide the last button and show the finish instead
@@ -263,6 +301,15 @@ $(document).ready(function(){
 });
 
 
+function formatBytes(bytes){
+  if      (bytes >= 1000000000) { bytes = (bytes / 1000000000).toFixed(2) + "TB"; }
+  else if (bytes >= 1000000)    { bytes = (bytes / 1000000).toFixed(2) + "GB"; }
+  else if (bytes >= 1000)       { bytes = (bytes / 1000).toFixed(2) + "MB"; }
+  else if (bytes > 1)           { bytes = bytes + "KB"; }
+  else if (bytes == 1)          { bytes = bytes + "KB"; }
+  else                          { bytes = "0 bytes"; }
+  return bytes.replace('.',',');
+}
 
  //Function to show image before upload
 

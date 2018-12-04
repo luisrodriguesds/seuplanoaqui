@@ -183,7 +183,7 @@
 		                            	<form method="" action="" id="sobre-seu-consumo">
 			                                <h4 class="info-text"> Responda as seguintes perguntas </h4>
 			                                <div class="row">
-		                                        <!-- <div class="col-sm-4">
+		                                       <!--  <div class="col-sm-4">
 		                                            <div class="choice" data-toggle="wizard-checkbox">
 		                                                <input type="checkbox" name="jobb" value="Design">
 		                                                <div class="icon">
@@ -211,13 +211,55 @@
 		                                            </div>
 		                                        </div> -->
 		                                        <div class="col-sm-6 col-sm-offset-1 center-div">
-													<div class="input-group">
-														<label class="answer">Quanto você consome de YouTube em média em um dia?</label>
+		                                        	<h4>Qual é o seu consumo de internet móvel?</h4>
+		                                        	<div class="form-group about-us">
+														<label class="answer">1) Quantos e-mails (só texto)você envia e/ou recebe por dia?</label>
+				                                        <input name="answer_1" accessKey="dados" placeholder="Média de 6 a 10 e-mails em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="10">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="form-group about-us">
+														<label class="answer">2) Quantos e-mails (com anexo) você envia e/ou recebe por dia?</label>
+				                                        <input name="answer_2" accessKey="dados" placeholder="Média de 2 a 3 e-mails em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="350">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="form-group about-us">
+														<label class="answer">3) Quantos sites você visita por dia? (incluindo as redes sociais)</label>
+				                                        <input name="answer_3" accessKey="dados" placeholder="Média de 5 a 8 sites em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="300">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="form-group about-us">
+														<label class="answer">4) Quantas mensagens você posta nas redes sociais por dia?</label>
+				                                        <input name="answer_4" accessKey="dados" placeholder="Média de 3 a 5 postagem em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="5">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="form-group about-us">
+														<label class="answer">5) Quantas fotos você posta nas redes sociais por dia?</label>
+				                                        <input name="answer_5" accessKey="dados" placeholder="Média de 1 a 4 postagens em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="350">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="form-group about-us">
+														<label class="answer">6) Quantas mensagens você troca em chats de redes sociais por dia?</label>
+				                                        <input name="answer_6" accessKey="dados" placeholder="Média de 150 a 200 mensagens em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="40">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="form-group about-us">
+														<label class="answer">7) Quantos minutos de vídeo você assiste na internet por dia? (incluindo as redes sociais)</label>
+				                                        <input name="answer_7" accessKey="dados" placeholder="Média de 10 a 20 minutos em dias comuns" type="number" min="0" class="form-control">
+				                                        <input type="hidden" name="valorbase" value="10000">
+				                                        <input type="hidden" name="typebase" value="Kb">
+													</div>
+													<div class="input-group about-us">
+														<label class="answer">8) De uma escala de 1 a 5 quanto custuma realizar ligações para própria e para outras operadoras.</label>
 														<table class="table">
 															<tr>
 																<thead>
 																	<tr>
-																		<th>0</th>
 																		<th>1</th>
 																		<th>2</th>
 																		<th>3</th>
@@ -226,29 +268,27 @@
 																	</tr>
 																	<tr>
 																		<td>
-																			<input type="radio" accessKey="dados" name="answer_1" value="0">
+																			<input type="radio" accessKey="dados" name="answer_8" value="1">
 																		</td>
 																		<td>
-																			<input type="radio" accessKey="dados" name="answer_1" value="1">
+																			<input type="radio" accessKey="dados" name="answer_8" value="2">
 																		</td>
 																		<td>
-																			<input type="radio" accessKey="dados" name="answer_1" value="2">
+																			<input type="radio" accessKey="dados" name="answer_8" value="3">
 																		</td>
 																		<td>
-																			<input type="radio" accessKey="dados" name="answer_1" value="3">
+																			<input type="radio" accessKey="dados" name="answer_8" value="4">
 																		</td>
 																		<td>
-																			<input type="radio" accessKey="dados" name="answer_1" value="4">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_1" value="5">
+																			<input type="radio" accessKey="dados" name="answer_8" value="5">
 																		</td>
 																	</tr>
 																</thead>
 															</tr>
 														</table>
 													</div>
-													<div class="input-group">
+
+													<!-- <div class="input-group">
 														<label class="answer">Quanto você consome de Facebook em média em um dia?</label>
 														<table class="table">
 															<tr>
@@ -396,9 +436,10 @@
 																</thead>
 															</tr>
 														</table>
-													</div>
+													</div> -->
 
 			                                	</div>
+
 			                                </div>
 		                            	</form>
 		                            </div>
@@ -407,20 +448,19 @@
 		                                    <div class="col-sm-12">
 		                                        <h4 class="info-text"> O melhor plano para você é da:  </h4>
 		                                    </div>
-		                                    <div class="col-sm-12 text-center">
-		                                    	<img src="" class="img_res" style="width: 30%; margin-bottom: 30px;">
-		                                    </div>
-		                                    <div class="col-sm-5 center-div text-center">
-		                                    	<strong><h3 class="plano_res">Plano Infinity pré!</h3></strong>
-		                                    </div>
-		                                    <div class="col-sm-5 center-div text-center">
-		                                    	<h3 class="dado_res">Pacote: </h3>
-		                                    </div>
-		                                    <div class="col-sm-5 center-div text-center">
-		                                    	<h3 class="min_res">Minutos: </h3>
-		                                    </div>
-		                                    <div class="col-sm-5 center-div text-center">
-		                                    	<h3 class="preco_res">Preço: </h3>
+		                                    <div class="lista_plano">
+			                                    <div class="card">
+				                                    <div class="col-sm-12 text-center"><img src="" class="img_res" style="width: 30%; margin-bottom: 30px;"></div>
+				                                    <div class="col-sm-5 center-div text-center"><strong><h3 class="res_tipo_servico">CONTROLE - TIM BLACK</h3></strong></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_validade">30 dias</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_preco">14,99</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_pacote">2GB - 200min - SMS: 100</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_app">Apps Inclusos: PROTEGE SAÚDE</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_appili">Apps Ilimitados: WHATSAPP MENSSEGER</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_permanenciaMinima">Permanência Mínima: -</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_obs">Observação: -</h3></div>
+				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_obs">Dependentes: -</h3></div><hr>
+			                                    </div>
 		                                    </div>
 		                                    <!-- <div class="col-sm-7 col-sm-offset-1">
 	                                        	<div class="form-group label-floating">

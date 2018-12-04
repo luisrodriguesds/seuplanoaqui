@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+.about-us label{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+.about-us input[type=number]::placeholder{
+  color: #b5b5b5;
+}
 
 .logo-container{
     left: 50px;
