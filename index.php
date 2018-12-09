@@ -111,6 +111,10 @@
 			                    		<form action="" method="" id="sobre-voce">
 			                              <div class="row">
 			                                	<h4 class="info-text"> Vamos começar com as informações básicas sobre você!</h4>
+			                                	<div style="width: 90%; margin: 0 auto; text-align: justify;">
+			                                	<p>Este site tem como intuito auxiliar pessoas com pouco conhecimento na área de telefonia móvel, sugerindo um plano de dados para seu telefone celular que atenda suas necessidades. Essas necessidades serão estimadas a partir de um questionário que pode não atender exatamente as necessidades de cada usuário.</p>
+			                                		
+			                                	</div>
 			                                	<div class="col-sm-4 col-sm-offset-1">
 			                                    	<div class="picture-container">
 			                                        	<div class="picture">
@@ -126,7 +130,7 @@
 															<i class="material-icons">face</i>
 														</span>
 														<div class="form-group label-floating">
-				                                          <label class="control-label">Nome <small>(Obrigatório)</small></label>
+				                                          <label class="control-label">Nome <small></small></label>
 				                                          <input name="firstname" type="text" class="form-control">
 				                                        </div>
 													</div>
@@ -136,7 +140,7 @@
 															<i class="material-icons">record_voice_over</i>
 														</span>
 														<div class="form-group label-floating">
-														  <label class="control-label">Sobrenome <small>(Obrigatório)</small></label>
+														  <label class="control-label">Sobrenome <small></small></label>
 														  <input name="lastname" type="text" class="form-control">
 														</div>
 													</div>
@@ -147,7 +151,7 @@
 															<i class="material-icons">email</i>
 														</span>
 														<div class="form-group label-floating">
-				                                            <label class="control-label">Email <small>(Obrigatório)</small></label>
+				                                            <label class="control-label">Email <small></small></label>
 				                                            <input name="email" type="email" class="form-control">
 				                                        </div>
 													</div>
@@ -255,7 +259,7 @@
 				                                        <input type="hidden" name="typebase" value="Kb">
 													</div>
 													<div class="input-group about-us">
-														<label class="answer">8) De uma escala de 1 a 5 quanto custuma realizar ligações para própria e para outras operadoras.</label>
+														<label class="answer">8) Em uma escala de 1 a 5 quanto custuma realizar ligações para a mesma e para outras operadoras.</label>
 														<table class="table">
 															<tr>
 																<thead>
@@ -288,156 +292,6 @@
 														</table>
 													</div>
 
-													<!-- <div class="input-group">
-														<label class="answer">Quanto você consome de Facebook em média em um dia?</label>
-														<table class="table">
-															<tr>
-																<thead>
-																	<tr>
-																		<th>0</th>
-																		<th>1</th>
-																		<th>2</th>
-																		<th>3</th>
-																		<th>4</th>
-																		<th>5</th>
-																	</tr>
-																	<tr>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_2" value="0">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_2" value="1">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_2" value="2">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_2" value="3">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_2" value="4">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_2" value="5">
-																		</td>
-																	</tr>
-																</thead>
-															</tr>
-														</table>
-													</div>
-													<div class="input-group">
-														<label class="answer">Quanto você consome de Instagram em média em um dia?</label>
-														<table class="table">
-															<tr>
-																<thead>
-																	<tr>
-																		<th>0</th>
-																		<th>1</th>
-																		<th>2</th>
-																		<th>3</th>
-																		<th>4</th>
-																		<th>5</th>
-																	</tr>
-																	<tr>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_3" value="0">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_3" value="1">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_3" value="2">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_3" value="3">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_3" value="4">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_3" value="5">
-																		</td>
-																	</tr>
-																</thead>
-															</tr>
-														</table>
-													</div>
-
-													<div class="input-group">
-														<label class="answer">Quanto você consome de Twitter em média em um dia?</label>
-														<table class="table">
-															<tr>
-																<thead>
-																	<tr>
-																		<th>0</th>
-																		<th>1</th>
-																		<th>2</th>
-																		<th>3</th>
-																		<th>4</th>
-																		<th>5</th>
-																	</tr>
-																	<tr>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_4" value="0">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_4" value="1">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_4" value="2">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_4" value="3">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_4" value="4">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="dados" name="answer_4" value="5">
-																		</td>
-																	</tr>
-																</thead>
-															</tr>
-														</table>
-													</div>
-													<div class="input-group">
-														<label class="answer">Quanto você consome de minutos de ligação em um dia?</label>
-														<table class="table">
-															<tr>
-																<thead>
-																	<tr>
-																		<th>0</th>
-																		<th>1</th>
-																		<th>2</th>
-																		<th>3</th>
-																		<th>4</th>
-																		<th>5</th>
-																	</tr>
-																	<tr>
-																		<td>
-																			<input type="radio" accessKey="tel" name="answer_5" value="0">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="tel" name="answer_5" value="1">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="tel" name="answer_5" value="2">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="tel" name="answer_5" value="3">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="tel" name="answer_5" value="4">
-																		</td>
-																		<td>
-																			<input type="radio" accessKey="tel" name="answer_5" value="5">
-																		</td>
-																	</tr>
-																</thead>
-															</tr>
-														</table>
-													</div> -->
-
 			                                	</div>
 
 			                                </div>
@@ -449,18 +303,7 @@
 		                                        <h4 class="info-text"> O melhor plano para você é da:  </h4>
 		                                    </div>
 		                                    <div class="lista_plano">
-			                                    <div class="card">
-				                                    <div class="col-sm-12 text-center"><img src="" class="img_res" style="width: 30%; margin-bottom: 30px;"></div>
-				                                    <div class="col-sm-5 center-div text-center"><strong><h3 class="res_tipo_servico">CONTROLE - TIM BLACK</h3></strong></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_validade">30 dias</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_preco">14,99</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_pacote">2GB - 200min - SMS: 100</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_app">Apps Inclusos: PROTEGE SAÚDE</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_appili">Apps Ilimitados: WHATSAPP MENSSEGER</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_permanenciaMinima">Permanência Mínima: -</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_obs">Observação: -</h3></div>
-				                                    <div class="col-sm-5 center-div text-center"><h3 class="res_obs">Dependentes: -</h3></div><hr>
-			                                    </div>
+			                                    <p style="width: 20%; margin: 0 auto; text-align: center;">Carregando...</p>
 		                                    </div>
 		                                    <!-- <div class="col-sm-7 col-sm-offset-1">
 	                                        	<div class="form-group label-floating">

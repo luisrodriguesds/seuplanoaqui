@@ -50,15 +50,15 @@ $(document).ready(function(){
     var $validator = $('.wizard-card #sobre-voce').validate({
 		  rules: {
 		    firstname: {
-		      required: true,
+		      required: false,
 		      minlength: 3
 		    },
 		    lastname: {
-		      required: true,
+		      required: false,
 		      minlength: 3
 		    },
             email: {
-              required: true,
+              required: false,
               minlength: 3
             },
             estado: {
@@ -191,27 +191,20 @@ $(document).ready(function(){
                 var totalweek   = 0;
                 var totalmonth  = 0;
 
-                //Valorbase*Num -> 1 dia
-                //Valorbase*Num*7 -> 1 semana
-                //Valorbase*Num*30 -> 1 mes
-
                 for (var i = 0; i < answers.length; i++) {
                     totalKb = totalKb + ($(answers[i]).val()*$(answers[i]).siblings('[name=valorbase]').val());
                 }
+
                 totalweek = 7*totalKb;
                 totalweek = formatBytes(totalweek);
                 totalmonth= 30*totalKb;
                 totalmonth= formatBytes(totalmonth); 
-                // totalKb   = formatBytes(totalKb);
-                console.log();
-                console.log(totalweek);
-                console.log(totalmonth);
                 $.post(location.href+'assets/ajax/verifica_plano.php', {totalKb:totalKb, totalweek:totalweek, totalmonth:totalmonth}, function(data, textStatus, xhr) {
-
+                    // $(window).offset().top = 0;
                     if (data != '') {
                         data = $.parseJSON(data);
-                        console.log(data);
                         var res = '';
+                        var oplink = {"TIM":"https://www.tim.com.br/", "CLARO":"https://www.claro.com.br/", "VIVO":"https://www.vivo.com.br/", "OI":"https://www.oi.com.br/"};
                         for (var i = 0; i < data.length; i++) {
                             
                             res+= '<div class="card">';
@@ -224,10 +217,13 @@ $(document).ready(function(){
                             res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_appili">Apps Ilimitados: '+data[i].aplicativosIlimitados+'</h3></div>';
                             res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_permanenciaMinima">Permanência Mínima: '+data[i].permanenciaMinima+'</h3></div>';
                             res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_obs">Observação: '+((data[i].obs == null) ? '-' : data[i].obs)+'</h3></div>';
-                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_obs">Dependentes: '+((data[i].dependentes == null) ? '-' : data[i].dependentes)+'</h3></div><hr>';
+                            res+= '<div class="col-sm-5 center-div text-center"><h3 class="res_obs">Dependentes: '+((data[i].dependentes == null) ? '-' : data[i].dependentes)+'</h3></div>';
+                            res+= '<center><a href="'+oplink[data[i].operadora]+'" target="_blank" class="btn btn-success">Ir para o site</a></center> <hr>';
+                            
                             res+= '</div>';
                         }
-                        $('.lista_plano').html(res);
+                        var aviso = '<div style="width: 90%; margin: 0 auto; text-align: justify;"><p>O intuito desse site é propor um plano de telefonia móvel que se encaixe melhor com o perfil dos usuários, e está sujeito a alterações das características dos planos de acordo com cada operadora. Não nos responsabilizamos por eventuais mudanças. Favor, entre em contato com a operadora escolhida para validar a oferta e contratá-la</p></div>';
+                        $('.lista_plano').html(res+aviso);
                     }
                 });
 
