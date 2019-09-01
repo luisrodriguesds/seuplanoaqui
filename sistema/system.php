@@ -13,7 +13,7 @@
 		// $configFile = $_SERVER['DOCUMENT_ROOT'].'/stratus/netClass/sistema/config.php';
 
 		//Para o local
-		$configFile = $_SERVER['DOCUMENT_ROOT'].'/seuplanoaqui/sistema/config.php';
+		$configFile = $_SERVER['DOCUMENT_ROOT'].'/sistema/config.php';
 
 		//Chama config
 		if(!file_exists($configFile))

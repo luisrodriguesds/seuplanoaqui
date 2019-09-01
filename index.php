@@ -115,7 +115,7 @@
 			                                	<p>Este site tem como intuito auxiliar pessoas com pouco conhecimento na área de telefonia móvel, sugerindo um plano de dados para seu telefone celular que atenda suas necessidades. Essas necessidades serão estimadas a partir de um questionário que pode não atender exatamente as necessidades de cada usuário.</p>
 			                                		
 			                                	</div>
-			                                	<div class="col-sm-4 col-sm-offset-1">
+			                                	<!-- <div class="col-sm-4 col-sm-offset-1">
 			                                    	<div class="picture-container">
 			                                        	<div class="picture">
 	                                        				<img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
@@ -123,8 +123,8 @@
 			                                        	</div>
 			                                        	<h6>Escolha uma imagem se preferir!</h6>
 			                                    	</div>
-			                                	</div>
-			                                	<div class="col-sm-6">
+			                                	</div> -->
+			                                	<div class="col-sm-10 col-sm-offset-1">
 													<div class="input-group">
 														<span class="input-group-addon">
 															<i class="material-icons">face</i>
@@ -362,7 +362,7 @@
 
 	    <div class="footer">
 	        <div class="container text-center">
-	             Made with <a href="https://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard">Material Kit</a>. Developed by  <a href="http://luisrodriguesdev.com.br">Luis Rodrigues.</a>
+	             Made with <a href="https://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard">Material Kit</a>. Developed by  <a href="http://luisrodriguesdev.epizy.com">Luis Rodrigues.</a>
 	        </div>
 	    </div>
 	</div>
@@ -428,7 +428,7 @@
 
 	<!--  Plugin for the Wizard -->
 	<script src="assets/js/demo.js" type="text/javascript"></script>
-	<script src="assets/js/material-bootstrap-wizard.js" type="text/javascript"></script>
+	<script src="assets/js/material-bootstrap-wizard.js?v=1.0" type="text/javascript"></script>
 
     <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 	<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
